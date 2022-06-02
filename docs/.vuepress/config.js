@@ -1,8 +1,11 @@
+const { defaultTheme } = require('@vuepress/theme-default')
 module.exports = {
     lang: 'en-US',
     title: '9A',
     description: '9A Workshop',
-    themeConfig: {
+    theme: defaultTheme({
+        // set config here
+      
         // logo: '/assets/images/logo.svg',
         // head: [
         //     ['link', { rel: 'icon', href: '/_assets/images/logo.svg' }],
@@ -27,7 +30,7 @@ module.exports = {
         //         'misc.md',
         //     ],
         // },
-    },
+    }),
 
     extendsMarkdown: md => {
         md.set({ breaks: false })
