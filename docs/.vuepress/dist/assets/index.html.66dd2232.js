@@ -1,0 +1,1 @@
+import{_ as e,o,c as t,a as _}from"./app.425c7ccf.js";const c={},n=_("p",null,"9A workshop",-1),s=[n];function r(a,l){return o(),t("div",null,s)}var i=e(c,[["render",r],["__file","index.html.vue"]]);export{i as default};

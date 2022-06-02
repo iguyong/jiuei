@@ -1,1 +1,0 @@
-const e={key:"v-2fdc3e81",path:"/courses/web211/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:null,contributors:[]},filePathRelative:"courses/web211/index.md"};export{e as data};

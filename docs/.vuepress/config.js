@@ -2,7 +2,6 @@ module.exports = {
     lang: 'en-US',
     title: '9A',
     description: '9A Workshop',
-
     themeConfig: {
         // logo: '/assets/images/logo.svg',
         // head: [
@@ -21,7 +20,7 @@ module.exports = {
         editLinks: true,
         search: true,
         docsDir: 'docs',
-        sidebar: false,
+        sidebar: [],
         // sidebar: {
         //     '/javascript/': ['index.md', 'introduction.md', 'collections.md', 'scope_and_closure.md', 'promise.md', 'object_prototype.md',
         //         'reading-notes.md',
