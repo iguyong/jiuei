@@ -39,15 +39,15 @@ let requestOptions = { // 里面不能有body
   redirect: "follow",
 }
 fetch(`${url}/${key}/${id}`, requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
+  .then(response => response.json())
+  .then(data => {
     if (data.id === id) {   // 验证是否存在该用户
       return data
     } else {
       throw new Error("用户名不存在")
     }
   })
-  .catch((err) => console.log(err))
+  .catch(err => console.log(err))
 ```
 
 ## 更改某个id的数据
@@ -98,7 +98,10 @@ requestOptions.body = JSON.stringify({
     name: "匿名",
     tasks: [],   // 初始化一个空的待办清单
 });
-fetch(`${url}/${key}`, requestOptions) // 这里的网址不需要id
+fetch(`${url}/${key}`, requestOptions) // 这里的网址没有id
+.then(response => response.json())
+  .then(data => console.log(data.id))  //新创建后的数据的id
+  .catch(err => console.log(err)) 
 ```
 ## 删除某个id的数据
 方法为"DELETE", 网址为`${url}/${key}`, 不能有body.
@@ -112,7 +115,7 @@ let requestOptions = { // 里面不能有body
   redirect: "follow",
 }
 fetch(`${url}/${key}/${id}`, requestOptions)
-  .then((response) => response.json())
+  .then(response => response.json())
   .then(result => console.log('删除数据成功'))
   .catch(err => console.log(err))
 ```
