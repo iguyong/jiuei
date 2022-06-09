@@ -1,0 +1,1 @@
+const e={key:"v-0d79f18c",path:"/courses/web211/final/",title:"web\u57FA\u7840\u5927\u4F5C\u4E1A",lang:"en-US",frontmatter:{title:"web\u57FA\u7840\u5927\u4F5C\u4E1A"},excerpt:"",headers:[],git:{updatedTime:1654161104e3,contributors:[{name:"guyong",email:"jcel@qq.com",commits:1}]},filePathRelative:"courses/web211/final/index.md"};export{e as data};

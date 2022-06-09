@@ -1,0 +1,1 @@
+const e={key:"v-477e7476",path:"/courses/calculus212/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1654419132e3,contributors:[{name:"guyong",email:"jcel@qq.com",commits:1}]},filePathRelative:"courses/calculus212/index.md"};export{e as data};
