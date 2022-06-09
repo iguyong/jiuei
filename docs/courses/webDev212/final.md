@@ -1,59 +1,82 @@
-本页面随时会有更新，大更新会在微信群发通知
+> 本页面随时会有更新，大更新会在微信群发通知
+
+更新日志(2022-06-09)
+1. 修改：json-server不需将id作为用户名
+1. 增加：json-server增加了一些公开密钥
+1. 修改：完善了json-server的使用说明和示例（放在另一个网页中，下面有链接）
+1. 增加：增加了json-server的帮助程序（可以在线修改数据）
 
 # 大作业题目
-使用Vue3制作一个支持多用户登录的待办清单应用
+使用Vue3制作一个支持多用户登录的待办清单应用。只需完成前端，后端可以使用任意可以用的服务。
 
-## 要求
-### 用户功能
+# 要求
+## 必须实现的功能
+1. 注册：至少要提供用户名和密码，若是数据库中已有该用户名，则注册失败。
 1. 登录：至少验证用户名和密码，验证通过才能登录成功，否则登录失败
-1. 待办清单：登录后待办清单为当前用户的待办清单，<mark>不同用户的待办清单存储在不同的数据中</mark>；待办清单的功能参考上一次作业，至少要实现以下功能：
-  - 每个任务有一个名字和状态
-  - 可以修改任务的名字
-  - 可以修改任务的状态
-  - 可以添加新的任务
-  - 可以删除某个存在的任务
-1. 注册：至少要提供用户名和密码，若是数据库中已有该用户名，则注册失败
+1. 待办清单：登录后待办清单为当前用户的待办清单，不同用户的待办清单存储在不同的数据中。待办清单的功能参考上一次作业，至少要实现以下功能：
+    - 每个任务有一个名字和状态
+    - 可以修改任务的名字
+    - 可以修改任务的状态
+    - 可以添加新的任务
+    - 可以删除某个存在的任务
 
-### 数据存储
-每个用户至少要存储用户名、密码、待办列表，用户名需要唯一
+## 数据存储
+每个用户至少要存储用户名、密码、待办列表数据，用户名需要唯一。
 
-## 提交和评分方式
-<mark>提交代码和报告，代码整个目录压缩成一个压缩包，报告放在压缩包的根目录中，在学习通上提交。</mark>
-- 代码必须要有源代码(放到一个目录中），不能只是编译后的代码。
+## 加分项
+1. 丰富功能。包括但不限于：
+  - 注册时增加用户信息，如手机号、邮箱
+  - 注册时使用验证码、手机号验证
+  - 登录后修改用户信息，如用户名、手机号
+  - 增强待办清单的功能，如子任务功能、提醒功能、排序功能
+  - 增加其它应用，如记事本、日历
+1. 美化界面
+1. 改善用户体验，例如更加人性化、使用更方便的待办清单（参考滴答清单）
+1. 使用Vue的进阶功能，例如SFC, vue-router, vuex, pinia, 组合式API
+
+# 提交和评分方式
+<mark>提交前端代码和报告，代码整个目录压缩成一个压缩包，报告放在压缩包的根目录中，在学习通上提交。</mark>
+- 代码必须要有源代码(放到一个目录中），不能只是编译后的代码
 - 第三方包（例如node_modules)也一起提交，若是不提交的话，需在报告中说明如何安装
-- 报告用来提供信息，以免我看不到你的效果（例如如何安装第三方包，如何运行）
+- 报告用来提供信息，以免我看不到你的效果（例如如何安装第三方包，如何运行）,尤其是加分项，可以多截图，也可以另外附上视频录像
 
-<mark>评分以代码的效果为准</mark>：
-- 源代码需尽可能清晰、易读，否则会扣分
+评分以代码的效果为准：
+- 源代码需清晰、易读，否则可能会扣分
 - 报告本身不占分，但是写得好有加分；<mark>因报告中未做说明或说明不清，可能会使得我看不到你的效果，从而影响效果评分</mark>
 
-
-
 # 远程数据库使用
-
-项目要求使用后端 JSON 存储(建议使用`fetch`函数来访问)
+项目要求使用后端存储用户数据(建议使用`fetch`函数来访问)
 - 可以使用[Pantry](getpantry.cloud)或其它第三方提供的数据库
-- 也可以使用本课程提供的[json-server](https://github.com/typicode/json-server)
-- 提交时只提交前端，所以不要使用本地的后端。如果想自己搭建后端的话，要保证该后端可以直接访问，不需要我做额外的步骤。
+- 也可以自己写后端，但是需部署到我可访问到的服务器上，不能提交上来让我来部署
+- 也可以使用我在阿里云上搭建的[json-server](https://github.com/typicode/json-server)
 
 ## Pantry使用方法
 参考 https://getpantry.cloud
 
-待续...
-
 ## json-server 使用方法
-我在阿里云上搭建好了数据库，简单的使用方法如下，详情请参考[github](https://github.com/typicode/json-server)
-- url: http://47.99.244.42:2999
-- key: <mark>私发给每个同学（大家在学习通或微信或课上找我要）</mark>
+我在阿里云上搭建好了json-server数据库，url为`http://47.99.244.42:2999`, 每个同学使用一个key来访问数据。
 
-重要：每个key对应的数据是一个数组，数组元素是一个个的对象。每个对象代表一个用户，每个用户必须有一个 id 作为用户名。每个key的数据已初始化了一个用户。
+这里[http://47.99.244.42:2999]有一个帮助程序，大家可以用来在线修改数据。具体使用方法，参考[json-server使用方法](./json.md)。
 
-以下为 6TTP6PL 这个 key 的数据，<mark>供大家参考（可以增加或修改）</mark>。大家尽量只读这个key的数据，不要去修改，修改的话用自己的key.
+<span style="color:red">重要</span>：每个key对应的数据是一个数组，数组元素是一个个的对象。每个对象代表一个用户，该对象一定要有一个id。
+- 该id是用户的标识符（不一定要作为用户名），用户创建后无法更改
+- 创建用户时，可以不提供id, 数据库会自动生成一个不重复的id
+- 若想实现用户名修改，不能使用该id作为用户名
+
+<mark>以下的公开密钥，大家可以随意用（如果担心数据冲突，可以找我要一个私有密钥），最后提交的时候，程序中的密钥可以是任意一个有效的密钥(公开的或私有的），我测试的时候会重置所有密钥的数据。</mark>
 
 ```js
-[
-  {
-    id: "guyong",
+'zcd88qa', 'KIseq1U', 'mt9uZc7', 'lDLIgSd', '1rpDQ6B', 'fkyXTDu', 'aAbm53V', 'DZU2E6j', 'fPqSL9J', 'jwajeiQ', 'wuRHhlH', '6TTP6PL'
+```
+
+以下为每个key重置后的数据，仅供参考，大家可以根据自己需要自行修改，只需满足：
+1. 每个key对应的数据是一个数组
+1. 数组中每个元素是一个对象，该对象一定要有一个不重复的id
+
+```js
+[ // 每个key对应的数据是一个数组
+  { // 数组中每个元素是一个对象，代表一个用户
+    id: "guyong",  // 每个用户有一个id （创建后不可修改），可用来存储用户名
     password: "guyong123",
     name: "辜勇",
     tasks: [
@@ -78,109 +101,9 @@
         status: "to-do",
       },
     ],
-  },
-  {
-    id: "john",
-    password: "john",
-    name: "匿名",
-    tasks: [],
-  },
+  }
 ]
 ```
 
-### 读取用户名为 id 的数据
 
-```js
-const myHeaders = new Headers()
-myHeaders.append("Content-Type", "application/json")
-let requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-}
-fetch(`${url}/${key}/${id}`, requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.id === id) {   // 验证是否存在该用户
-      return data
-    } else {
-      throw new Error("用户名不存在")
-    }
-  })
-  .catch((err) => console.log(err))
-```
-
-### 更改用户名为 id 的数据为 userData
-
-注意：该用户必须已经存在，且 id 是不可更改的
-
-```js
-const myHeaders = new Headers()
-myHeaders.append("Content-Type", "application/json")
-let requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-}
-
-const userData = {
-  id: "john",
-  password: "john123",
-  name: "John Smith",
-  tasks: [
-    {
-      name: "learn vuejs in 2 weeks",
-      status: "in-progress",
-    },
-  ],
-}
-requestOptions.body = JSON.stringify(userData)
-
-fetch(`${url}/${key}/${userData.id}`, requestOptions)
-  .then((response) => {
-    this.log({
-      msg: "Save data succeed",
-      type: 1,
-    })
-  })
-  .catch((err) => {
-    this.log({
-      msg: err.message,
-      type: -1,
-    })
-  })
-```
-
-### 注册新用户（用户名为 id, 用户密码为 pwd)
-
-注意：要先判断该用户名是否已经存在
-
-```js
-const myHeaders = new Headers()
-myHeaders.append("Content-Type", "application/json")
-let requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-}
-
-fetch(`${url}/${key}/${id}`, requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.id === id) {   // 验证是否存在该用户
-      throw new Error("用户名已存在")
-    } else {
-      return true
-    }
-  })
-  .then(() => {
-    requestOptions.method = "POST"
-    requestOptions.body = JSON.stringify({
-      id: id,
-      password: pwd,
-      name: "匿名",
-      tasks: [],   // 初始化一个空的待办清单
-    })
-    return fetch(`${url}/${key}`, requestOptions) // 这里的网址不需要key
-  })
-```
+祝大家顺利，有事尽早联系我。
